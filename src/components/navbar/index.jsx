@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../navbar/index.css'
 import {
   Navbar,
   NavbarBrand,
@@ -53,59 +54,38 @@ class Header extends Component {
   render () {
     return (
       <div
-        style={{
-          position: 'fixed',
-          left: 0,
-          top: 0,
-          right: 0,
-          zIndex: 997,
-          backgroundColor: '#fff'
-        }}
+        className='navb'
       >
-        <Navbar
-          light
-          expand='md'
-          className='row align-items-center justify-content-between d-flex px-5'
+        <div
+          className='container main-menu'
         >
-          <NavbarBrand href='/'>
-            <img src='../img/logo.png' alt='logo' />
-          </NavbarBrand>
-          <NavbarToggler onClick={() => {}} />
-          <Collapse isOpen={null} navbar>
-            <Nav className='ml-auto' navbar>
-              {this.state.navbarData.map((item, key) => {
-                return (
-                  <NavItem
-                    key={key}
-                  >
-                    <NavLink
-                      href={item.href}
-                      style={{
-                        color: '#22222f',
-                        float: 'left',
-                        fontFamily: 'Poppins sans-serif',
-                        fontSize: '14px',
-                        fontWeight: '300',
-                        lineHeight: '22.75px',
-                        listStyleImage: 'none',
-                        listStylePosition: 'outside',
-                        listStyleType: 'none',
-                        marginBottom: '0px',
-                        marginLeft: '10px',
-                        marginRight: '0px',
-                        marginTop: '0px',
-                        position: 'relative',
-                        textAlign: 'center',
-                        whiteSpace: 'nowrap'
-                      }}
-                    >{item.title}
-                    </NavLink>
-                  </NavItem>
-                )
-              })}
-            </Nav>
-          </Collapse>
-        </Navbar>
+          <Navbar
+            expand='md'
+            className='row align-items-center justify-content-between d-flex'
+          >
+            <NavbarBrand href='/'>
+              <img src={require('../../img/logo.png')} alt='logo' style={{ fontWeight: '300', lineHeight: '22.75px', textAlign: 'left' }} />
+            </NavbarBrand>
+            <NavbarToggler onClick={() => {}} />
+            <Collapse isOpen={null} navbar>
+              <Nav className='ml-auto nav-menu-container' navbar>
+                {this.state.navbarData.map((item, key) => {
+                  return (
+                    <NavItem
+                      key={key}
+                    >
+                      <NavLink
+                        href={item.href}
+                        className='nav-menu'
+                      >{item.title}
+                      </NavLink>
+                    </NavItem>
+                  )
+                })}
+              </Nav>
+            </Collapse>
+          </Navbar>
+        </div>
       </div>
     )
   }
