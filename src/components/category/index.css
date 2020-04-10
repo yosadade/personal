@@ -2,7 +2,6 @@
     background-color: rgb(249, 249, 255);
     box-sizing: border-box;
     color: rgb(119, 119, 119);
-    cursor: auto;
     display: block;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
@@ -27,9 +26,9 @@
 .content-title {
     box-sizing: border-box;
     color: rgb(255, 255, 255);
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 21.6px;
     margin-bottom: 0px;
     margin-left: 0px;
@@ -111,7 +110,7 @@
     margin-right: 0px;
     max-width: 100%;
     text-align: center;
-    display: middle;
+    vertical-align: middle;
     width: 349.983px;
 }
 
@@ -156,13 +155,14 @@
 }
 
 .p {
-    color: #ffffff;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 22.75px;
     margin-bottom: 16px;
     margin-top: 0px;
-    text-align: center
+    text-align: center;
 }
 

@@ -33,11 +33,11 @@ class Category extends Component {
 
   render () {
     return (
-      <section
-        className='top-category-widget-area pt-90 pb-90'
+      <div
+        className=''
       >
         <div
-          className='container'
+          className='container top-category-widget-area pt-90 pb-90'
         >
           <div
             className='row'
@@ -90,7 +90,7 @@ class Category extends Component {
             })}
           </div>
         </div>
-      </section>
+      </div>
     )
   }
 }

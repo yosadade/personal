@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Navbar from '../src/components/navbar'
 import Category from '../src/components/category'
+import Content from '../src/components/content'
 
 class App extends Component {
   render () {
@@ -12,6 +13,7 @@ class App extends Component {
       >
         <Navbar />
         <Category />
+        <Content />
       </div>
     )
   }
