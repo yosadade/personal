@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../category/index.css'
-import Image1 from '../../img/cat-widget1.jpg'
-import Image2 from '../../img/cat-widget2.jpg'
-import Image3 from '../../img/cat-widget3.jpg'
+import Image1 from '../../assets/cat-widget1.jpg'
+import Image2 from '../../assets/cat-widget2.jpg'
+import Image3 from '../../assets/cat-widget3.jpg'
 
 class Category extends Component {
   constructor () {

@@ -64,7 +64,7 @@ class Header extends Component {
             className='row align-items-center justify-content-between d-flex'
           >
             <NavbarBrand href='/'>
-              <img src={require('../../img/logo.png')} alt='logo' style={{ fontWeight: '300', lineHeight: '22.75px', textAlign: 'left' }} />
+              <img src={require('../../assets/logo.png')} alt='logo' style={{ fontWeight: '300', lineHeight: '22.75px', textAlign: 'left' }} />
             </NavbarBrand>
             <NavbarToggler onClick={() => {}} />
             <Collapse isOpen={null} navbar>
