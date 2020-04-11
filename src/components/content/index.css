@@ -135,10 +135,6 @@
     height: 5px;
 }
 
-.post-title {
-    
-}
-
 .h3 {
     font-size: 24px;
     color:#222222;
@@ -151,7 +147,7 @@
 }
 
 h3:hover {
-    color: #8490ff
+    color: #007bff;
 }
 
 .excert {
@@ -166,7 +162,7 @@ h3:hover {
     text-align: left;
 }
 
-.primary-btn {
+.btn {
     color: #222222;
     font-weight: 500;    
     font-family: sans-serif;
@@ -182,37 +178,70 @@ h3:hover {
     text-decoration: none;
     outline: 0;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
 
-.primary-btn:hover {
-    background-color:#8490ff;
+.btn:hover {
+    background-color:#ffffff;
     color:#ffffff;
 }
 
 .icon {
     color: #222222;
-    width: 15px;
-    font-weight: 900;
-
+    width: 14px;
+    font-weight: bold;
+    top: 10px;
 }
 
-.sidebar-widget {
-    box-sizing: border-box;
-    color: rgb(119, 119, 119);
-    flex-basis: 33.3333%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-family: "Poppins", sans-serif;
+.widget-wrap .single-sidebar-widget {
+    margin: 30px 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid 
+    #eee;
+}
+
+
+.widget-wrap .search-widget form.search-form::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.widget-wrap .search-widget form.search-form input[type="text"] {
+    color: #fff;
+    padding: 10px 22px;
     font-size: 14px;
-    font-weight: 300;
-    line-height: 22.75px;
-    max-width: 33.3333%;
-    min-height: 1px;
-    padding-bottom: 120px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    text-align: left;
-    width: 379.983px;
+    border: none;
+    float: left;
+    width: 80%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background:#007bff;
+    font-size: 14px;
+    font-family: "Poppins" sans-serif;
 }
 
+.widget-wrap .search-widget form.search-form button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background:#007bff;
+    color:#fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.widget-wrap .user-info-widget {
+    text-align: center;
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+}
