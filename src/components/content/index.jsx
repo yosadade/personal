@@ -120,7 +120,7 @@ class Content extends Component {
                   <p className='excert'>
                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
                   </p>
-                  <a className='btn-primary btn' href='#'>
+                  <a className='btn-info btn' href='#'>
                     View More
                   </a>
                 </div>
@@ -170,7 +170,7 @@ class Content extends Component {
                   <p className='excert'>
                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
                   </p>
-                  <a className='btn-primary btn' href='#'>
+                  <a className='btn-info btn' href='#'>
                     View More
                   </a>
                 </div>
@@ -220,7 +220,7 @@ class Content extends Component {
                   <p className='excert'>
                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
                   </p>
-                  <a className='btn-primary btn' href='#'>
+                  <a className='btn-info btn' href='#'>
                     View More
                   </a>
                 </div>
@@ -270,7 +270,7 @@ class Content extends Component {
                   <p className='excert'>
                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
                   </p>
-                  <a className='btn-primary btn' href='#'>
+                  <a className='btn-info btn' href='#'>
                     View More
                   </a>
                 </div>
@@ -320,12 +320,37 @@ class Content extends Component {
                   <p className='excert'>
                     MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
                   </p>
-                  <a className='btn-primary btn' href='#'>
+                  <a className='btn-info btn' href='#'>
                     View More
                   </a>
                 </div>
               </div>
             </div>
+            <nav className='blog-pagination justify-content-center d-flax'>
+              <ul className='pagination'>
+                <li className='page-item'>
+                  <img src={require('../../assets/icon/lnr-chevron-left.svg')} style={{ width: '13px' }} />
+                </li>
+                <li className='page-item'>
+                  <a>01</a>
+                </li>
+                <li className='page-item'>
+                  <a>02</a>
+                </li>
+                <li className='page-item'>
+                  <a>03</a>
+                </li>
+                <li className='page-item'>
+                  <a>04</a>
+                </li>
+                <li className='page-item'>
+                  <a>05</a>
+                </li>
+                <li className='page-item'>
+                  <img src={require('../../assets/icon/lnr-chevron-right.svg')} style={{ width: '13px' }} />
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className='col-lg-4 sidebar-widget'>
             <div className='widget-wrap'>
@@ -379,7 +404,7 @@ class Content extends Component {
                   <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
                 </div>
                 <div className='single-sidebar-widget popular-post-widget'>
-                  <a className='btn-primary btn-popular-post text-center btn-block text-light'>Popular Posts</a>
+                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Popular Posts</a>
                   <div className='popular-post-list mt-4'>
                     <div className='single-post-list d-flex flex-row'>
                       <div className='thumb'>
@@ -433,7 +458,7 @@ class Content extends Component {
                   </a>
                 </div>
                 <div className='single-sidebar-widget post-category-widget'>
-                  <a className='btn-primary btn-popular-post text-center btn-block text-light'>Post Categories</a>
+                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Post Categories</a>
                   <ul className='cat-list'>
                     <li>
                       <a className='d-flex justify-content-between'>
@@ -480,18 +505,18 @@ class Content extends Component {
                   </ul>
                 </div>
                 <div className='single-sidebar-widget newsletter-widget'>
-                  <a className='btn-primary btn-popular-post text-center btn-block text-light'>News Letter</a>
+                  <a className='btn-info btn-popular-post text-center btn-block text-light'>News Letter</a>
                   <p>Here, I focus on a range of items and features that we use in life without giving them a second thought. </p>
                   <div className='form-group d-flex flex-row'>
                     <input className='form-control' style={{ width: '70%', borderRadius: '0px', fontSize: '14px' }} placeholder='Enter Email' type='text' />
-                    <button className='px-4' style={{ width: '30%' }}>
-                      <i className='fa fa-envelope' />
+                    <button className='px-4' style={{ width: '30%', border: 'none', backgroundColor: '#17a2b8' }}>
+                      <i className='fa fa-envelope' style={{ color: '#fff' }} />
                     </button>
                   </div>
                   <p className='text-center mt-3'>You Can unsubscribe at any time</p>
                 </div>
                 <div className='single-sidebar-widget tag-cloud-widget'>
-                  <a className='btn-primary btn-popular-post text-center btn-block text-light'>Tag Cloud</a>
+                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Tag Cloud</a>
                   <ul className='row li-tags my-3 ml-1'>
                     <li>
                       <a>Technology</a>

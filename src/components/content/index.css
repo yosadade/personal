@@ -400,3 +400,48 @@ h3:hover {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
 }
+
+.blog-pagination {
+    box-sizing: border-box;
+    color: rgb(119, 119, 119);
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+.pagination li {
+    background-attachment: scroll;
+    color: #222222;
+    cursor: pointer;
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 17.5px;
+    margin-left: -1px;
+    outline-width: 0px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    position: relative;
+    text-align: left;
+}
+
+.page-item:hover {
+    background-color: #17a2b8;
+    color: #fff;
+}
