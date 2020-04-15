@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../navbar/index.css'
 import {
   Navbar,
   NavbarBrand,
@@ -55,6 +54,24 @@ class Header extends Component {
     return (
       <div
         className='navb'
+        style={{
+          transition: 'all 0.5s',
+          boxShadow: '-21.213px 21.213px 30px 0px rgba(158, 158, 158, 0.3)',
+          backgroundAttachment: 'scroll',
+          backgroundClip: 'border-box',
+          backgroundColor: 'rgb(255, 255, 255)',
+          display: 'block',
+          left: '0px',
+          lineHeight: '22.75px',
+          position: 'fixed',
+          right: '0px',
+          top: '0px',
+          transitionDelay: '0s',
+          transitionDuration: '0.5s',
+          transitionProperty: 'all',
+          transitionTimingFunction: 'ease',
+          zIndex: 997
+        }}
       >
         <div
           className='container main-menu'
@@ -77,6 +94,13 @@ class Header extends Component {
                       <NavLink
                         href={item.href}
                         className='nav-menu'
+                        style={{
+                          boxSizing: 'border-box',
+                          color: '#313131',
+                          fontSize: '13px',
+                          fontWeight: 'bold',
+                          lineHeight: '22.75px'
+                        }}
                       >{item.title}
                       </NavLink>
                     </NavItem>
