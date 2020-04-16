@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
+import { ActionSosmed } from '../../action'
 
 class Footer extends Component {
   constructor () {
     super()
     this.state = {
-      datas: [
-
+      dataSosmed: [
+        {
+          href: 'https://www.facebook.com/yozz.dee',
+          className: 'icon-sosmed fa fa-facebook'
+        },
+        {
+          href: 'https://www.instagram.com/yosadade',
+          className: 'icon-sosmed fa fa-instagram'
+        },
+        {
+          href: 'https://github.com/yosadade',
+          className: 'icon-sosmed fa fa-github'
+        },
+        {
+          href: 'https://www.linkedin.com/in/yosada-dede-525606177/',
+          className: 'icon-sosmed fa fa-linkedin'
+        }
       ]
     }
   }
@@ -25,71 +41,61 @@ class Footer extends Component {
           }}
         >
           <div className='row' style={{ color: '#777777' }}>
-            <div className='col-lg-5 col-md-6 col-sm-6'>
-              <div className='single-footer-widget'>
-                <h4 style={{ color: '#fff', fontWeight: 'bold' }}>About Me</h4>
-                <p className='my-3'> We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience. </p>
-                <p className='footer-text'>Copyright ©2020 All rights reserved | This template is made with by Colorlib</p>
-              </div>
-            </div>
-            <div className='col-lg-5 col-md-6 col-sm-6'>
-              <div className='single-footer-widget'>
-                <h4 style={{ color: '#fff', fontWeight: 'bold' }}>Newsletter</h4>
-                <p className='my-3'>Stay Update With our latest trends</p>
-                <form>
-                  <input style={{ fontSize: '14px', borderRight: 'none', width: '90%' }} className='input-control' type='text' name='Email' placeholder='Enter Email Address' />
-                  <button
-                    className='btn btn-default'
-                    type='submit'
-                    style={{
-                      width: '10%',
-                      fontSize: '2px',
-                      borderRadius: 0,
-                      background: '#17a2b8',
-                      color: '#fff'
-                    }}
-                  >
-                    <i className='icon-sosmed fa fa-arrow-right' style={{ fontSize: '14px', borderLeft: 'none' }} />
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div className='col-lg-2 col-md-6 col-sm-6 social-widget
-            '
-            >
-              <h4 style={{ color: '#fff', fontWeight: 'bold' }}>Follow Me</h4>
-              <p className='my-3'>Let us be social</p>
-              <div className='footer-social d-flex align-items-center'>
-                <ul className='social-links justify-content-start row px-3'>
-                  <li className='li-social-links'>
-                    <a>
-                      <i className='icon-sosmed fa fa-facebook' style={{ color: '#fff' }} />
-                    </a>
-                  </li>
-                    &nbsp;
-                  <li className='li-social-links'>
-                    <a>
-                      <i className='icon-sosmed fa fa-instagram' style={{ color: '#fff' }} />
-                    </a>
-                  </li>
-                    &nbsp;
-                  <li className='li-social-links'>
-                    <a>
-                      <i className='icon-sosmed fa fa-github' style={{ color: '#fff' }} />
-                    </a>
-                  </li>
-                    &nbsp;
-                  <li className='li-social-links'>
-                    <a>
-                      <i className='icon-sosmed fa fa-linkedin' style={{ color: '#fff' }} />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            {this.AboutMe()}
+            {this.Newsletter()}
+            {this.FollowMe()}
           </div>
         </div>
       </footer>
+    )
+  }
+
+  AboutMe = () => {
+    return (
+      <div className='col-lg-5 col-md-6 col-sm-6'>
+        <div className='single-footer-widget'>
+          <h4 style={{ color: '#fff', fontWeight: 'bold' }}>About Me</h4>
+          <p className='my-3'> We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience. </p>
+          <p className='footer-text'>Copyright ©2020 All rights reserved | This template is made with by Colorlib</p>
+        </div>
+      </div>
+    )
+  }
+
+  Newsletter = () => {
+    return (
+      <div className='col-lg-5 col-md-6 col-sm-6'>
+        <div className='single-footer-widget'>
+          <h4 style={{ color: '#fff', fontWeight: 'bold' }}>Newsletter</h4>
+          <p className='my-3'>Stay Update With our latest trends</p>
+          <form>
+            <input style={{ fontSize: '14px', borderRight: 'none', width: '90%' }} className='input-control' type='text' name='Email' placeholder='Enter Email Address' />
+            <button
+              className='btn btn-default'
+              type='submit'
+              style={{
+                width: '10%',
+                fontSize: '2px',
+                borderRadius: 0,
+                background: '#17a2b8',
+                color: '#fff'
+              }}
+            >
+              <i className='icon-sosmed fa fa-arrow-right' style={{ fontSize: '14px', borderLeft: 'none' }} />
+            </button>
+          </form>
+        </div>
+      </div>
+    )
+  }
+
+  FollowMe = () => {
+    return (
+      <div className='col-lg-2 col-md-6 col-sm-6 social-widget'>
+        <h4 style={{ color: '#fff', fontWeight: 'bold' }}>Follow Me</h4>
+        <p className='my-3'>Let us be social</p>
+        <ActionSosmed style={{ color: '#fff' }} />
+      </div>
     )
   }
 }

@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
 import '../content/index.css'
+import Content2 from '../content2'
+import {
+  ActionSosmed,
+  ActionUserDetails,
+  ActionTags,
+  ActionBlog
+} from '../../action'
 
 import User from '../../assets/icon/lnr-user.svg'
 import Calendar from '../../assets/icon/lnr-calendar-full.svg'
@@ -12,28 +19,30 @@ import Img3 from '../../assets/img/feature-img3.jpg'
 import Img4 from '../../assets/img/feature-img4.jpg'
 import Img5 from '../../assets/img/feature-img5.jpg'
 
+import Icon1 from '../../assets/icon/lnr-chevron-left.svg'
+import Icon2 from '../../assets/icon/lnr-chevron-right.svg'
 class Content extends Component {
   constructor () {
     super()
     this.state = {
       userDetails: [
         {
-          a: 'Mark wiens',
+          name: 'Mark wiens',
           href: '#',
           icon: User
         },
         {
-          a: '12 Dec, 2017',
+          name: '12 Dec, 2017',
           href: '#',
           icon: Calendar
         },
         {
-          a: '1.2M Views',
+          name: '1.2M Views',
           href: '#',
           icon: Eye
         },
         {
-          a: '06 Comments',
+          name: '06 Comments',
           href: '#',
           icon: Bubble
         }
@@ -64,6 +73,36 @@ class Content extends Component {
           h3: 'Telescopes 101',
           p: 'MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.'
         }
+      ],
+      paginationData: [
+        {
+          icon: Icon1,
+          page: ''
+        },
+        {
+          icon: null,
+          page: '01'
+        },
+        {
+          icon: null,
+          page: '02'
+        },
+        {
+          icon: null,
+          page: '03'
+        },
+        {
+          icon: null,
+          page: '04'
+        },
+        {
+          icon: null,
+          page: '05'
+        },
+        {
+          icon: Icon2,
+          page: ''
+        }
       ]
     }
   }
@@ -77,137 +116,37 @@ class Content extends Component {
           className='row'
         >
           <div className='col-lg-8 post-list'>
-            <div className='single-post row mb-1'>
-              <div className='meta-details col-lg-3 col-md-3 py-4'>
-                <ul
-                  className='tags mb-4'
-                  style={{
-                    color: '#222222',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: 'bold',
-                    listStyleImage: 'none',
-                    listStylePosition: 'outside',
-                    listStyleType: 'none',
-                    marginLeft: '0px',
-                    marginRight: '0px',
-                    marginTop: '0px',
-                    paddingBottom: '0px',
-                    paddingLeft: '0px',
-                    paddingRight: '0px',
-                    paddingTop: '0px',
-                    textAlign: 'right'
-                  }}
-                >
-                  <li className=''>
-                    <a>Food, Technology, Politics, Lifestyle</a>
-                  </li>
-                </ul>
+            {this.state.blog.map((item, blog) => {
+              return (
                 <div
-                  className='user-details'
-                  style={{
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    lineHeight: '22.75px',
-                    marginLeft: '-15px',
-                    marginRight: '-15px',
-                    textAlign: 'right'
-                  }}
+                  className='single-post row mb-1'
+                  key={blog}
                 >
-                  <p className='user-name col-lg-12 col-md-12 col-6'>
-                    <a className='' style={{ color: '#222222', fontWeight: 'bold' }}>Mark wiens&nbsp;&nbsp;</a>
-                    <span className='span-icon'>
-                      <img
-                        src={require('../../assets/icon/lnr-user.svg')}
-                        style={{
-                          color: '#222222',
-                          width: '14px',
-                          fontWeight: 'bold'
-                        }}
-                      />
-                    </span>
-                  </p>
-                  <p className='user-name col-lg-12 col-md-12 col-6'>
-                    <a className='' style={{ color: '#222222', fontWeight: 'bold' }}>12 Dec, 2017&nbsp;&nbsp;</a>
-                    <span className='span-icon'>
-                      <img
-                        src={require('../../assets/icon/lnr-calendar-full.svg')}
-                        style={{
-                          color: '#222222',
-                          width: '14px',
-                          fontWeight: 'bold'
-                        }}
-                      />
-                    </span>
-                  </p>
-                  <p className='user-name col-lg-12 col-md-12 col-6'>
-                    <a className='' style={{ color: '#222222', fontWeight: 'bold' }}>1,2M Views&nbsp;&nbsp;</a>
-                    <span className='span-icon'>
-                      <img
-                        src={require('../../assets/icon/lnr-eye.svg')}
-                        style={{
-                          color: '#222222',
-                          width: '14px',
-                          fontWeight: 'bold'
-                        }}
-                      />
-                    </span>
-                  </p>
-                  <p className='user-name col-lg-12 col-md-12 col-6'>
-                    <a className='' style={{ color: '#222222', fontWeight: 'bold' }}>06 Comments&nbsp;&nbsp;</a>
-                    <span className='span-icon'>
-                      <img
-                        src={require('../../assets/icon/lnr-bubble.svg')}
-                        style={{
-                          color: '#222222',
-                          width: '14px',
-                          fontWeight: 'bold'
-                        }}
-                      />
-                    </span>
-                  </p>
+                  <div className='meta-details col-lg-3 col-md-3 py-4'>
+                    <ActionTags />
+                    {this.state.userDetails.map((item, id) => {
+                      return (
+                        <ActionUserDetails
+                          key={id}
+                          name={item.name}
+                          icon={item.icon}
+                        />
+                      )
+                    })}
+                  </div>
+                  <div className='col-lg-9 col-ml-9'>
+                    <ActionBlog
+                      img={item.img}
+                      h3={item.h3}
+                      p={item.p}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className='col-lg-9 col-ml-9'>
-                <div className='feature-img mb-4'>
-                  <img className='img-fluid' src={require('../../assets/img/feature-img1.jpg')} />
-                  <a className='post-title mx-1'>
-                    <h3
-                      style={{ fontSize: '24px', color: '#222222', fontWeight: 'bold' }}
-                    >Astronomy Binoculars A Great Alternative
-                    </h3>
-                  </a>
-                  <p
-                    style={{
-                      color: '#222222',
-                      fontFamily: 'Poppins, sans-serif',
-                      fontSize: '14px',
-                      fontWeight: 'bold',
-                      lineHeight: '22.75px'
-                    }}
-                  >
-                    MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
-                  </p>
-                  <a
-                    className='btn-info btn'
-                    href='#'
-                    style={{
-                      fontWeight: 'bold',
-                      fontSize: '14px',
-                      textAlign: 'center'
-                    }}
-                  >
-                    View More
-                  </a>
-                </div>
-              </div>
-            </div>
+              )
+            })}
 
             <nav
-              className='blog-pagination'
+              className='blog-pagination mt-3'
               style={{
                 fontFamily: 'Poppins, sans-serif',
                 display: 'flex',
@@ -217,168 +156,34 @@ class Content extends Component {
                 fontSize: '13px'
               }}
             >
-              <ul className='pagination'>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <img src={require('../../assets/icon/lnr-chevron-left.svg')} style={{ width: '13px' }} />
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <a>01</a>
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <a>02</a>
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <a>03</a>
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <a>04</a>
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <a>05</a>
-                </li>
-                <li
-                  className='page-item'
-                  style={{
-                    backgroundAttachment: 'scroll',
-                    color: '#222222',
-                    cursor: 'pointer',
-                    display: 'block',
-                    fontFamily: 'Poppins, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: '800',
-                    lineHeight: '17.5px',
-                    marginLeft: '-1px',
-                    outlineWidth: '0px',
-                    paddingBottom: '8px',
-                    paddingLeft: '12px',
-                    paddingRight: '12px',
-                    paddingTop: '8px',
-                    position: 'relative',
-                    textAlign: 'left'
-                  }}
-                >
-                  <img src={require('../../assets/icon/lnr-chevron-right.svg')} style={{ width: '13px' }} />
-                </li>
+              <ul className='pagination row'>
+                {this.state.paginationData.map((item, page) => {
+                  return (
+                    <li
+                      key={page}
+                      className='page-item px-2'
+                      style={{
+                        backgroundAttachment: 'scroll',
+                        color: '#222222',
+                        cursor: 'pointer',
+                        display: 'block',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: '800',
+                        lineHeight: '17.5px',
+                        marginLeft: '-1px',
+                        outlineWidth: '0px',
+                        paddingBottom: '8px',
+                        paddingTop: '8px',
+                        position: 'relative',
+                        textAlign: 'left'
+                      }}
+                    >
+                      <a>{item.page}</a>
+                      <img src={item.icon} style={{ width: '13px' }} />
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>
@@ -429,7 +234,25 @@ class Content extends Component {
                     <i className='fa fa-search' />
                   </button>
                 </form>
-                <div className='single-sidebar-widget user-info-widget'>
+                <div
+                  className='single-sidebar-widget user-info-widget'
+                  style={{
+                    borderBottomColor: 'rgb(238, 238, 238)',
+                    borderBottomStyle: 'solid',
+                    borderBottomWidth: '1px',
+                    boxSizing: 'border-box',
+                    color: '#222222',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    lineHeight: '22.75px',
+                    marginBottom: '30px',
+                    marginLeft: '30px',
+                    marginRight: '30px',
+                    marginTop: '30px',
+                    paddingBottom: '30px',
+                    textAlign: 'center'
+                  }}
+                >
                   <img
                     className='img mb-4 mt-3'
                     src={require('../../assets/img/user-info.png')}
@@ -463,8 +286,8 @@ class Content extends Component {
                       fontWeight: '800',
                       lineHeight: '22.75px',
                       marginBottom: '16px',
-                      marginTop: '0px',
-                      textAlign: 'center'
+                      textAlign: 'center',
+                      marginTop: '0px'
                     }}
                   >
                     Frontend Developer
@@ -473,126 +296,203 @@ class Content extends Component {
                     className='social-links justify-content-start row mx-3'
                     style={{ listStyleType: 'none' }}
                   >
-                    <li className='li-social-links mr-4'>
-                      <a>
-                        <img style={{ width: '11px' }} src={require('../../assets/icon/facebook-brands.svg')} />
-                      </a>
-                    </li>
-                    &nbsp;
-                    <li className='li-social-links mr-4'>
-                      <a>
-                        <img style={{ width: '11px' }} src={require('../../assets/icon/instagram-brands.svg')} />
-                      </a>
-                    </li>
-                    &nbsp;
-                    <li className='li-social-links mr-4'>
-                      <a>
-                        <img style={{ width: '11px' }} src={require('../../assets/icon/github-brands.svg')} />
-                      </a>
-                    </li>
-                    &nbsp;
-                    <li className='li-social-links mr-4'>
-                      <a>
-                        <img style={{ width: '11px' }} src={require('../../assets/icon/linkedin-in-brands.svg')} />
-                      </a>
-                    </li>
+                    <ActionSosmed style={{ color: '#222222' }} />
                   </ul>
-                  <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                  <p style={{ fontFamily: 'Poppins, sans-serif' }}>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
                 </div>
                 <div className='single-sidebar-widget popular-post-widget'>
-                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Popular Posts</a>
+                  <a
+                    className='btn-info btn-popular-post text-center btn-block text-light'
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'sans-serif',
+                      fontSize: '16px',
+                      lineHeight: '42px',
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      position: 'relative',
+                      cursor: 'pointer'
+                    }}
+                  >Popular Posts
+                  </a>
                   <div className='popular-post-list mt-4'>
-                    <div className='single-post-list d-flex flex-row'>
+                    <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
-                        <img className='img-fluid-popular-post' src={require('../../assets/img/pp1.jpg')} />
+                        <img
+                          className='img-fluid-popular-post'
+                          src={require('../../assets/img/pp1.jpg')}
+                          style={{
+                            height: '60px',
+                            maxWidth: '100%',
+                            verticalAlign: 'middle',
+                            width: '100px'
+                          }}
+                        />
                       </div>
-                      <div className='details'>
+                      <div className='details ml-2 mt-2'>
                         <a>
-                          <h6 style={{ fontWeight: 'bold', color: 'black' }}>Space The Final Frontier</h6>
+                          <h6 style={{ fontWeight: 'bold', color: '#222222', fontSize: '14px' }}>Space The Final Frontier</h6>
                         </a>
-                        <p>02 Hours ago</p>
+                        <p
+                          style={{
+                            fontFamily: 'Poppins, sans-serif', fontSize: '14px'
+                          }}
+                        >02 Hours ago
+                        </p>
                       </div>
                     </div>
-                    <div className='single-post-list d-flex flex-row'>
+                    <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
                         <img className='img-fluid-popular-post' src={require('../../assets/img/pp2.jpg')} />
                       </div>
-                      <div className='details'>
+                      <div className='details ml-2 mt-2'>
                         <a>
-                          <h6 style={{ fontWeight: 'bold', color: 'black' }}>Space The Final Frontier</h6>
+                          <h6 style={{ fontWeight: 'bold', color: '#222222', fontSize: '14px' }}>The Amazing Hubble</h6>
                         </a>
-                        <p>02 Hours ago</p>
+                        <p
+                          style={{
+                            fontFamily: 'Poppins, sans-serif', fontSize: '14px'
+                          }}
+                        >02 Hours ago
+                        </p>
                       </div>
                     </div>
-                    <div className='single-post-list d-flex flex-row'>
+                    <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
                         <img className='img-fluid-popular-post' src={require('../../assets/img/pp3.jpg')} />
                       </div>
-                      <div className='details'>
+                      <div className='details ml-2 mt-2'>
                         <a>
-                          <h6 style={{ fontWeight: 'bold', color: 'black' }}>Space The Final Frontier</h6>
+                          <h6 style={{ fontWeight: 'bold', color: '#222222', fontSize: '14px' }}>Astronomy Or Astrology</h6>
                         </a>
-                        <p>02 Hours ago</p>
+                        <p
+                          style={{
+                            fontFamily: 'Poppins, sans-serif', fontSize: '14px'
+                          }}
+                        >02 Hours ago
+                        </p>
                       </div>
                     </div>
-                    <div className='single-post-list d-flex flex-row'>
+                    <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
                         <img className='img-fluid-popular-post' src={require('../../assets/img/pp4.jpg')} />
                       </div>
-                      <div className='details'>
+                      <div className='details ml-2 mt-2'>
                         <a>
-                          <h6 style={{ fontWeight: 'bold', color: 'black' }}>Space The Final Frontier</h6>
+                          <h6 style={{ fontWeight: 'bold', color: '#222222', fontSize: '14px' }}>Asteroid telescope</h6>
                         </a>
-                        <p>02 Hours ago</p>
+                        <p
+                          style={{
+                            fontFamily: 'Poppins, sans-serif', fontSize: '14px'
+                          }}
+                        >02 Hours ago
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className='single-sidebar-widget ads-widget'>
+                <div className='single-sidebar-widget ads-widget mb-5'>
                   <a href='#'>
                     <img className='img-fluid' src={require('../../assets/img/ads-banner.jpg')} alt='' />
                   </a>
                 </div>
-                <div className='single-sidebar-widget post-category-widget'>
-                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Post Categories</a>
-                  <ul className='cat-list'>
-                    <li>
+                <div className='single-sidebar-widget post-category-widget mb-5'>
+                  <a
+                    className='btn-info btn-popular-post text-center btn-block text-light'
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'sans-serif',
+                      fontSize: '16px',
+                      lineHeight: '42px',
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      position: 'relative',
+                      cursor: 'pointer'
+                    }}
+                  >Post Categories
+                  </a>
+                  <ul
+                    className='cat-list'
+                    style={{
+                      margin: 0,
+                      padding: 0,
+                      listStyle: 'none',
+                      fontFamily: 'Poppins, sans-serif',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Technology</p>
                         <p>37</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Lifestyle</p>
                         <p>24</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Fashion</p>
                         <p>58</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Art</p>
                         <p>29</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Food</p>
                         <p>29</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Architecture</p>
                         <p>09</p>
                       </a>
                     </li>
-                    <li>
+                    <li
+                      style={{
+                        paddingTop: '10px',
+                        borderBottom: '2px dotted #eee'
+                      }}
+                    >
                       <a className='d-flex justify-content-between'>
                         <p>Adventure</p>
                         <p>44</p>
@@ -600,65 +500,261 @@ class Content extends Component {
                     </li>
                   </ul>
                 </div>
-                <div className='single-sidebar-widget newsletter-widget'>
-                  <a className='btn-info btn-popular-post text-center btn-block text-light'>News Letter</a>
-                  <p>Here, I focus on a range of items and features that we use in life without giving them a second thought. </p>
+                <div className='single-sidebar-widget newsletter-widget mb-5'>
+                  <a
+                    className='btn-info btn-popular-post text-center btn-block text-light'
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'sans-serif',
+                      fontSize: '16px',
+                      lineHeight: '42px',
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      position: 'relative',
+                      cursor: 'pointer'
+                    }}
+                  >News Letter
+                  </a>
+                  <p
+                    style={{
+                      textAlign: 'center',
+                      margin: '20px 0px',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 800,
+                      fontSize: '14px'
+                    }}
+                  >Here, I focus on a range of items and features that we use in life without giving them a second thought.
+                  </p>
                   <div className='form-group d-flex flex-row'>
                     <input className='form-control' style={{ width: '70%', borderRadius: '0px', fontSize: '14px' }} placeholder='Enter Email' type='text' />
                     <button className='px-4' style={{ width: '30%', border: 'none', backgroundColor: '#17a2b8' }}>
                       <i className='fa fa-envelope' style={{ color: '#fff' }} />
                     </button>
                   </div>
-                  <p className='text-center mt-3'>You Can unsubscribe at any time</p>
+                  <p
+                    className='text-center mt-3'
+                    style={{
+                      textAlign: 'center',
+                      margin: '20px 0px',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 800,
+                      fontSize: '14px'
+                    }}
+                  >You Can unsubscribe at any time
+                  </p>
                 </div>
                 <div className='single-sidebar-widget tag-cloud-widget'>
-                  <a className='btn-info btn-popular-post text-center btn-block text-light'>Tag Cloud</a>
-                  <ul className='row li-tags my-3 ml-1'>
-                    <li>
+                  <a
+                    className='btn-info btn-popular-post text-center btn-block text-light'
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'sans-serif',
+                      fontSize: '16px',
+                      lineHeight: '42px',
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      position: 'relative',
+                      cursor: 'pointer'
+                    }}
+                  >Tag Cloud
+                  </a>
+                  <ul
+                    className='row li-tags my-3 ml-1'
+                    style={{
+                      margin: 0,
+                      padding: 0,
+                      listStyle: 'none'
+                    }}
+                  >
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Technology</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Fashion</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Architecture</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Fashion</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Food</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Technology</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Lifestyle</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Art</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Adventure</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Food</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Lifestyle</a>
                     </li>
                     &nbsp;
-                    <li>
+                    <li
+                      style={{
+                        color: '#222222',
+                        display: 'inline-block',
+                        border: '1px solid #eee',
+                        background: '#fff',
+                        padding: '4px 14px',
+                        marginBottom: '10px',
+                        fontSize: '11px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'bold'
+                      }}
+                    >
                       <a>Adventure</a>
                     </li>
                     &nbsp;

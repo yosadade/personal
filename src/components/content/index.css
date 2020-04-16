@@ -40,91 +40,6 @@ h3:hover {
     font-family: "Poppins" sans-serif;
 }
 
-.single-sidebar-widget .user-info-widget {
-    border-bottom-color: rgb(238, 238, 238);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    box-sizing: border-box;
-    color: rgb(119, 119, 119);
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22.75px;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-
-.popular-title {
-    font-family: "poppins", sans-serif;
-    color: #fff;
-    font-size: 18px;
-}
-
-.btn-popular-post {
-    background-color: #8490ff;
-    font-weight: bold;    
-    font-family: sans-serif;
-    font-size: 16px;
-    text-align: left;
-    line-height: 42px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: none;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    text-decoration: none;
-    outline: 0;
-    box-sizing: border-box;
-}
-
-.img-fluid-popular-post {
-    height: 60px;
-    max-width: 100%;
-    vertical-align: middle;
-    width: 100px;
-}
-
-.details {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    margin-left: 12px;
-}
-
-.cat-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-family: "Poppins", sans-serif;
-    align-items: center;
-}
-
-.widget-wrap .post-category-widget .cat-list li {
-    padding-top: 10px;
-    padding-bottom: 0;
-    border-bottom: 2px dotted#eee;
-}
-
-.widget-wrap .newsletter-widget p {
-    text-align: center;
-    margin: 20px 0px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-}
-
-.widget-wrap .newsletter-widget .bbtns {
-    background:#8490ff;
-    color:#fff;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 8px 20px;
-    border-radius: 0;
-}
-
 .form-group {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
@@ -132,27 +47,6 @@ h3:hover {
     line-height: 22.75px;
     margin-bottom: 16px;
     text-align: left;
-}
-
-.col-autos {
-    width: 100%;
-}
-
-.li-tags {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-}
-
-.widget-wrap .tag-cloud-widget ul li {
-    display: inline-block;
-    border: 1px solid#eee;
-    background:#fff;
-    padding: 4px 14px;
-    margin-bottom: 10px;
-    font-size: 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
 }
 
 /* pagination */
