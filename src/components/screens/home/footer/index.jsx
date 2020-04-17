@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ActionSosmed } from '../../action'
+import { ActionSosmed } from '../../../../components/action'
 
 class Footer extends Component {
   constructor () {

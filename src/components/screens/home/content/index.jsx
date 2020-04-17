@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
-import '../content/index.css'
-import Content2 from '../content2'
+import './index.css'
 import {
   ActionSosmed,
   ActionUserDetails,
   ActionTags,
   ActionBlog
-} from '../../action'
+} from '../../../action'
 
-import User from '../../assets/icon/lnr-user.svg'
-import Calendar from '../../assets/icon/lnr-calendar-full.svg'
-import Eye from '../../assets/icon/lnr-eye.svg'
-import Bubble from '../../assets/icon/lnr-bubble.svg'
+import User from '../../../../assets/icon/lnr-user.svg'
+import Calendar from '../../../../assets/icon/lnr-calendar-full.svg'
+import Eye from '../../../../assets/icon/lnr-eye.svg'
+import Bubble from '../../../../assets/icon/lnr-bubble.svg'
 
-import Img1 from '../../assets/img/feature-img1.jpg'
-import Img2 from '../../assets/img/feature-img2.jpg'
-import Img3 from '../../assets/img/feature-img3.jpg'
-import Img4 from '../../assets/img/feature-img4.jpg'
-import Img5 from '../../assets/img/feature-img5.jpg'
+import Img1 from '../../../../assets/img/feature-img1.jpg'
+import Img2 from '../../../../assets/img/feature-img2.jpg'
+import Img3 from '../../../../assets/img/feature-img3.jpg'
+import Img4 from '../../../../assets/img/feature-img4.jpg'
+import Img5 from '../../../../assets/img/feature-img5.jpg'
 
-import Icon1 from '../../assets/icon/lnr-chevron-left.svg'
-import Icon2 from '../../assets/icon/lnr-chevron-right.svg'
+import Icon1 from '../../../../assets/icon/lnr-chevron-left.svg'
+import Icon2 from '../../../../assets/icon/lnr-chevron-right.svg'
 class Content extends Component {
   constructor () {
     super()
@@ -215,6 +214,19 @@ class Content extends Component {
                     type='text'
                     onFocus='this.placeholder = " "'
                     onBlur='this.placeholder = "Search Posts"'
+                    style={{
+                      color: '#fff',
+                      padding: '10px 22px',
+                      fontSize: '14px',
+                      border: 'none',
+                      float: 'left',
+                      width: '80%',
+                      borderBottomLeftRadius: '20px',
+                      borderTopLeftRadius: '20px',
+                      background: '#17a2b8',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontWeight: 'bold'
+                    }}
                   />
                   <button
                     type='Submit'
@@ -255,7 +267,7 @@ class Content extends Component {
                 >
                   <img
                     className='img mb-4 mt-3'
-                    src={require('../../assets/img/user-info.png')}
+                    src={require('../../../../assets/img/user-info.png')}
                     style={{
                       verticalAlign: 'middle',
                       borderStyle: 'none',
@@ -320,7 +332,7 @@ class Content extends Component {
                       <div className='thumb'>
                         <img
                           className='img-fluid-popular-post'
-                          src={require('../../assets/img/pp1.jpg')}
+                          src={require('../../../../assets/img/pp1.jpg')}
                           style={{
                             height: '60px',
                             maxWidth: '100%',
@@ -343,7 +355,7 @@ class Content extends Component {
                     </div>
                     <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
-                        <img className='img-fluid-popular-post' src={require('../../assets/img/pp2.jpg')} />
+                        <img className='img-fluid-popular-post' src={require('../../../../assets/img/pp2.jpg')} />
                       </div>
                       <div className='details ml-2 mt-2'>
                         <a>
@@ -359,7 +371,7 @@ class Content extends Component {
                     </div>
                     <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
-                        <img className='img-fluid-popular-post' src={require('../../assets/img/pp3.jpg')} />
+                        <img className='img-fluid-popular-post' src={require('../../../../assets/img/pp3.jpg')} />
                       </div>
                       <div className='details ml-2 mt-2'>
                         <a>
@@ -375,7 +387,7 @@ class Content extends Component {
                     </div>
                     <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
-                        <img className='img-fluid-popular-post' src={require('../../assets/img/pp4.jpg')} />
+                        <img className='img-fluid-popular-post' src={require('../../../../assets/img/pp4.jpg')} />
                       </div>
                       <div className='details ml-2 mt-2'>
                         <a>
@@ -393,7 +405,7 @@ class Content extends Component {
                 </div>
                 <div className='single-sidebar-widget ads-widget mb-5'>
                   <a href='#'>
-                    <img className='img-fluid' src={require('../../assets/img/ads-banner.jpg')} alt='' />
+                    <img className='img-fluid' src={require('../../../../assets/img/ads-banner.jpg')} alt='' />
                   </a>
                 </div>
                 <div className='single-sidebar-widget post-category-widget mb-5'>

@@ -9,10 +9,10 @@ import {
   NavLink
 } from 'reactstrap'
 
-import User from '../assets/icon/lnr-user.svg'
-import Calendar from '../assets/icon/lnr-calendar-full.svg'
-import Eye from '../assets/icon/lnr-eye.svg'
-import Bubble from '../assets/icon/lnr-bubble.svg'
+// import User from '../assets/icon/lnr-user.svg'
+// import Calendar from '../assets/icon/lnr-calendar-full.svg'
+// import Eye from '../assets/icon/lnr-eye.svg'
+// import Bubble from '../assets/icon/lnr-bubble.svg'
 
 class ActionNavbar extends Component {
   constructor (props) {
@@ -86,7 +86,7 @@ class ActionNavbar extends Component {
             className='row align-items-center justify-content-between d-flex'
           >
             <NavbarBrand href='/'>
-              <img src={require('../assets/logo.png')} alt='logo' style={{ fontWeight: '300', lineHeight: '22.75px', textAlign: 'left' }} />
+              <img src={require('../../assets/logo.png')} alt='logo' style={{ fontWeight: '300', lineHeight: '22.75px', textAlign: 'left' }} />
             </NavbarBrand>
             <NavbarToggler onClick={() => {}} />
             <Collapse isOpen={null} navbar>
@@ -113,6 +113,7 @@ const ActionNavbarItem = (props) => {
   return (
     <NavItem>
       <NavLink
+        link
         href={props.href}
         className='nav-menu'
         style={{
@@ -310,7 +311,7 @@ const ActionBlog = (props) => {
   return (
     <div className='feature-img mb-4'>
       <img className='img-fluid' src={props.img} />
-      <a href='#' className='post-title mx-1'>
+      <a href='/blog' className='post-title mx-1'>
         <h3
           style={{ fontSize: '24px', color: '#222222', fontWeight: 'bold' }}
         >{props.h3}
@@ -369,7 +370,7 @@ class ActionSosmed extends Component {
 
   render () {
     return (
-      <div className='d-flex align-items-center '>
+      <div className='d-flex align-items-center'>
         {this.state.dataSosmed.map((item, sosmed) => {
           return (
             <div className='footer-social d-flex align-items-center' key={sosmed}>

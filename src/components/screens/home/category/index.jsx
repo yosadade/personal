@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import '../category/index.css'
-import Image1 from '../../assets/cat-widget1.jpg'
-import Image2 from '../../assets/cat-widget2.jpg'
-import Image3 from '../../assets/cat-widget3.jpg'
+import './index.css'
+import Image1 from '../../../../assets/cat-widget1.jpg'
+import Image2 from '../../../../assets/cat-widget2.jpg'
+import Image3 from '../../../../assets/cat-widget3.jpg'
 
-import { ActionCategory } from '../../action'
+import { ActionCategory } from '../../../action'
 
 class Category extends Component {
   constructor () {

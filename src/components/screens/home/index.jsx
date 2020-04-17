@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import './App.css'
-import Home from '../src/components/screens/home'
-import Blog from '../src/components/screens/blog'
+import Navbar from '../home/navbar'
+import Category from '../home/category'
+import Content from '../home/content'
+import Footer from '../home/footer'
 
 class App extends Component {
   render () {
@@ -10,7 +11,10 @@ class App extends Component {
         className=''
         style={{ backgroundColor: '#f9f9ff' }}
       >
-        <Blog />
+        <Navbar />
+        <Category />
+        <Content />
+        <Footer />
       </div>
     )
   }
