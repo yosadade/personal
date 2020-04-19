@@ -330,7 +330,7 @@ const ActionBlog = (props) => {
       </p>
       <a
         className='btn-info btn'
-        href='#'
+        href='./blog'
         style={{
           fontWeight: 'bold',
           fontSize: '14px',
@@ -346,17 +346,26 @@ const ActionBlog = (props) => {
 const ActionButton = (props) => {
   return (
     <a
-      className='btn-info btn'
+      // className='btn-info btn'
+      className={props.className}
       href='#'
       style={props.style}
-      // style={{
-      //   fontWeight: 'bold',
-      //   fontSize: '14px',
-      //   textAlign: 'center'
-      // }}
     >
       {props.title}
     </a>
+  )
+}
+
+const ActionCategoryList = (props) => {
+  return (
+    <li
+      style={props.style}
+    >
+      <a className={props.className}>
+        <p>{props.title}</p>
+        <p>{props.jumlah}</p>
+      </a>
+    </li>
   )
 }
 
@@ -415,5 +424,6 @@ export {
   ActionUserDetails,
   ActionBlog,
   ActionButton,
+  ActionCategoryList,
   ActionSosmed
 }

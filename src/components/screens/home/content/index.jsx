@@ -4,7 +4,9 @@ import {
   ActionSosmed,
   ActionUserDetails,
   ActionTags,
-  ActionBlog
+  ActionBlog,
+  ActionButton,
+  ActionCategoryList
 } from '../../../action'
 
 import User from '../../../../assets/icon/lnr-user.svg'
@@ -101,6 +103,74 @@ class Content extends Component {
         {
           icon: Icon2,
           page: ''
+        }
+      ],
+      dataPostCategory: [
+        {
+          title: 'Technology',
+          jumlah: '37'
+        },
+        {
+          title: 'Lifestyle',
+          jumlah: '24'
+        },
+        {
+          title: 'Fashion',
+          jumlah: '29'
+        },
+        {
+          title: 'Art',
+          jumlah: '29'
+        },
+        {
+          title: 'Food',
+          jumlah: '15'
+        },
+        {
+          title: 'Architecture',
+          jumlah: '09'
+        },
+        {
+          title: 'Adventure',
+          jumlah: '44'
+        }
+      ],
+      dataTagCloud: [
+        {
+          title: 'Technology'
+        },
+        {
+          title: 'Fashion'
+        },
+        {
+          title: 'Architecture'
+        },
+        {
+          title: 'Fashion'
+        },
+        {
+          title: 'Food'
+        },
+        {
+          title: 'Technology'
+        },
+        {
+          title: 'Lifestyle'
+        },
+        {
+          title: 'Art'
+        },
+        {
+          title: 'Adventure'
+        },
+        {
+          title: 'Food'
+        },
+        {
+          title: 'Lifestyle'
+        },
+        {
+          title: 'Adventure'
         }
       ]
     }
@@ -316,7 +386,8 @@ class Content extends Component {
                   <p style={{ fontFamily: 'Poppins, sans-serif' }}>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
                 </div>
                 <div className='single-sidebar-widget popular-post-widget'>
-                  <a
+                  <ActionButton
+                    title='Popular Posts'
                     className='btn-info btn-popular-post text-center btn-block text-light'
                     style={{
                       fontWeight: 'bold',
@@ -328,8 +399,7 @@ class Content extends Component {
                       position: 'relative',
                       cursor: 'pointer'
                     }}
-                  >Popular Posts
-                  </a>
+                  />
                   <div className='popular-post-list mt-4'>
                     <div className='single-post-list d-flex flex-row mb-2'>
                       <div className='thumb'>
@@ -412,9 +482,11 @@ class Content extends Component {
                   </a>
                 </div>
                 <div className='single-sidebar-widget post-category-widget mb-5'>
-                  <a
+                  <ActionButton
                     className='btn-info btn-popular-post text-center btn-block text-light'
+                    title='Post Category'
                     style={{
+                      textAlign: 'center',
                       fontWeight: 'bold',
                       fontFamily: 'sans-serif',
                       fontSize: '16px',
@@ -424,8 +496,7 @@ class Content extends Component {
                       position: 'relative',
                       cursor: 'pointer'
                     }}
-                  >Post Categories
-                  </a>
+                  />
                   <ul
                     className='cat-list'
                     style={{
@@ -433,7 +504,9 @@ class Content extends Component {
                       padding: 0,
                       listStyle: 'none',
                       fontFamily: 'Poppins, sans-serif',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      fontSize: '14px',
+                      fontWeight: 'bold'
                     }}
                   >
                     <li
@@ -442,81 +515,22 @@ class Content extends Component {
                         borderBottom: '2px dotted #eee'
                       }}
                     >
-                      <a className='d-flex justify-content-between'>
-                        <p>Technology</p>
-                        <p>37</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Lifestyle</p>
-                        <p>24</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Fashion</p>
-                        <p>58</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Art</p>
-                        <p>29</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Food</p>
-                        <p>29</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Architecture</p>
-                        <p>09</p>
-                      </a>
-                    </li>
-                    <li
-                      style={{
-                        paddingTop: '10px',
-                        borderBottom: '2px dotted #eee'
-                      }}
-                    >
-                      <a className='d-flex justify-content-between'>
-                        <p>Adventure</p>
-                        <p>44</p>
-                      </a>
+                      {this.state.dataPostCategory.map((item, post) => {
+                        return (
+                          <ActionCategoryList
+                            key={post}
+                            className='d-flex justify-content-between'
+                            title={item.title}
+                            jumlah={item.jumlah}
+                          />
+                        )
+                      })}
                     </li>
                   </ul>
                 </div>
                 <div className='single-sidebar-widget newsletter-widget mb-5'>
-                  <a
+                  <ActionButton
+                    title='News Letter'
                     className='btn-info btn-popular-post text-center btn-block text-light'
                     style={{
                       fontWeight: 'bold',
@@ -528,8 +542,7 @@ class Content extends Component {
                       position: 'relative',
                       cursor: 'pointer'
                     }}
-                  >News Letter
-                  </a>
+                  />
                   <p
                     style={{
                       textAlign: 'center',
