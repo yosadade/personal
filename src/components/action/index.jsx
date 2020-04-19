@@ -343,6 +343,23 @@ const ActionBlog = (props) => {
   )
 }
 
+const ActionButton = (props) => {
+  return (
+    <a
+      className='btn-info btn'
+      href='#'
+      style={props.style}
+      // style={{
+      //   fontWeight: 'bold',
+      //   fontSize: '14px',
+      //   textAlign: 'center'
+      // }}
+    >
+      {props.title}
+    </a>
+  )
+}
+
 class ActionSosmed extends Component {
   constructor () {
     super()
@@ -350,19 +367,19 @@ class ActionSosmed extends Component {
       dataSosmed: [
         {
           href: 'https://www.facebook.com/yozz.dee',
-          className: 'icon-sosmed fa fa-facebook'
+          classname: 'icon-sosmed fa fa-facebook'
         },
         {
           href: 'https://www.instagram.com/yosadade',
-          className: 'icon-sosmed fa fa-instagram'
+          classname: 'icon-sosmed fa fa-instagram'
         },
         {
           href: 'https://github.com/yosadade',
-          className: 'icon-sosmed fa fa-github'
+          classname: 'icon-sosmed fa fa-github'
         },
         {
           href: 'https://www.linkedin.com/in/yosada-dede-525606177/',
-          className: 'icon-sosmed fa fa-linkedin'
+          classname: 'icon-sosmed fa fa-linkedin'
         }
       ]
     }
@@ -370,7 +387,9 @@ class ActionSosmed extends Component {
 
   render () {
     return (
-      <div className='d-flex align-items-center'>
+      <div
+        style={this.props.wrapstyle}
+      >
         {this.state.dataSosmed.map((item, sosmed) => {
           return (
             <div className='footer-social d-flex align-items-center' key={sosmed}>
@@ -378,7 +397,7 @@ class ActionSosmed extends Component {
                 className='mr-4'
                 href={item.href}
               >
-                <i className={item.className} style={this.props.style} />
+                <i className={item.classname} style={this.props.iconstyle} />
               </a>
             </div>
           )
@@ -395,5 +414,6 @@ export {
   ActionTags,
   ActionUserDetails,
   ActionBlog,
+  ActionButton,
   ActionSosmed
 }

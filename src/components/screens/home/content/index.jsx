@@ -308,7 +308,10 @@ class Content extends Component {
                     className='social-links justify-content-start row mx-3'
                     style={{ listStyleType: 'none' }}
                   >
-                    <ActionSosmed style={{ color: '#222222' }} />
+                    <ActionSosmed
+                      wrapstyle={{ display: 'flex', alignItems: 'center' }}
+                      iconstyle={{ color: '#222222' }}
+                    />
                   </ul>
                   <p style={{ fontFamily: 'Poppins, sans-serif' }}>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
                 </div>

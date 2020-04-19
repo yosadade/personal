@@ -2,30 +2,6 @@ import React, { Component } from 'react'
 import { ActionSosmed } from '../../../../components/action'
 
 class Footer extends Component {
-  constructor () {
-    super()
-    this.state = {
-      dataSosmed: [
-        {
-          href: 'https://www.facebook.com/yozz.dee',
-          className: 'icon-sosmed fa fa-facebook'
-        },
-        {
-          href: 'https://www.instagram.com/yosadade',
-          className: 'icon-sosmed fa fa-instagram'
-        },
-        {
-          href: 'https://github.com/yosadade',
-          className: 'icon-sosmed fa fa-github'
-        },
-        {
-          href: 'https://www.linkedin.com/in/yosada-dede-525606177/',
-          className: 'icon-sosmed fa fa-linkedin'
-        }
-      ]
-    }
-  }
-
   render () {
     return (
       <footer
@@ -94,7 +70,10 @@ class Footer extends Component {
       <div className='col-lg-2 col-md-6 col-sm-6 social-widget'>
         <h4 style={{ color: '#fff', fontWeight: 'bold' }}>Follow Me</h4>
         <p className='my-3'>Let us be social</p>
-        <ActionSosmed style={{ color: '#fff' }} />
+        <ActionSosmed
+          wrapstyle={{ display: 'flex', alignItems: 'center' }}
+          iconstyle={{ color: '#fff' }}
+        />
       </div>
     )
   }
