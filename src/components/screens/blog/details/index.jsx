@@ -4,7 +4,7 @@ class Details extends Component {
   render () {
     return (
       <div
-        className='relative about-banner'
+        className='relative about-banner mb-5'
         style={{
           backgroundColor: '#17a2b8'
         }}

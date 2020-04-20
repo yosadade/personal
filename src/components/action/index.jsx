@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   Navbar,
   NavbarBrand,
@@ -8,11 +9,6 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap'
-
-// import User from '../assets/icon/lnr-user.svg'
-// import Calendar from '../assets/icon/lnr-calendar-full.svg'
-// import Eye from '../assets/icon/lnr-eye.svg'
-// import Bubble from '../assets/icon/lnr-bubble.svg'
 
 class ActionNavbar extends Component {
   constructor (props) {
@@ -356,6 +352,36 @@ const ActionButton = (props) => {
   )
 }
 
+const ActionPopularPost = (props) => {
+  return (
+    <div className='single-post-list d-flex flex-row mb-2'>
+      <div className='thumb'>
+        <img
+          className='img-fluid-popular-post'
+          src={props.img}
+          style={{
+            height: '60px',
+            maxWidth: '100%',
+            verticalAlign: 'middle',
+            width: '100px'
+          }}
+        />
+      </div>
+      <div className='details ml-2 mt-2'>
+        <a>
+          <h6 style={{ fontWeight: 'bold', color: '#222222', fontSize: '14px' }}>{props.title}</h6>
+        </a>
+        <p
+          style={{
+            fontFamily: 'Poppins, sans-serif', fontSize: '14px'
+          }}
+        >{props.hours}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 const ActionCategoryList = (props) => {
   return (
     <li
@@ -366,6 +392,28 @@ const ActionCategoryList = (props) => {
         <p>{props.jumlah}</p>
       </a>
     </li>
+  )
+}
+
+const ActionTagCloud = (props) => {
+  return (
+    <li
+      style={{
+        color: '#222222',
+        display: 'inline-block',
+        border: '1px solid #eee',
+        background: '#fff',
+        padding: '4px 14px',
+        marginBottom: '10px',
+        fontSize: '11px',
+        fontFamily: 'Poppins, sans-serif',
+        fontWeight: 'bold',
+        marginRight: '5px'
+      }}
+    >
+      <a>{props.title}</a>
+    </li>
+
   )
 }
 
@@ -416,6 +464,116 @@ class ActionSosmed extends Component {
   }
 }
 
+const ActionCommentList = (props) => {
+  return (
+    <div
+      // className='comment-list pb-3 pl-4'
+      className={props.className}
+    >
+      <div className='single-comment justify-content-between d-flex'>
+        <div className='user justify-content-between d-flex'>
+          <div className='thumb mr-2'>
+            <img src={require('../../assets/img/c2.jpg')} />
+          </div>
+          <div className='desc'>
+            <a
+              href='#'
+              style={{
+                fontWeight: 'bold',
+                fontSize: '15px',
+                color: '#222222'
+              }}
+            >{props.name}
+            </a>
+            <p
+              className='date'
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '12px',
+                fontWeight: '300'
+              }}
+            >
+              {props.time}
+            </p>
+            <p
+              className='comment'
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}
+            >
+              {props.comment}
+            </p>
+          </div>
+        </div>
+        <div>
+          <ActionButton
+            title='REPLY'
+            className='btn-info btn'
+            style={{
+              fontWeight: 'bold',
+              fontSize: '12px',
+              textAlign: 'center'
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+ActionNavbarItem.propTypes = {
+  href: PropTypes.string,
+  title: PropTypes.string
+}
+
+ActionCategory.propTypes = {
+  img: PropTypes.string,
+  alt: PropTypes.string,
+  h4: PropTypes.string,
+  p: PropTypes.string
+}
+
+ActionUserDetails.propTypes = {
+  name: PropTypes.string,
+  icon: PropTypes.string
+}
+
+ActionBlog.propTypes = {
+  img: PropTypes.string,
+  h3: PropTypes.string,
+  p: PropTypes.string
+}
+
+ActionButton.propTypes = {
+  className: PropTypes.string,
+  style: PropTypes.string,
+  title: PropTypes.string
+}
+
+ActionPopularPost.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string,
+  hours: PropTypes.string
+}
+
+ActionCategoryList.propTypes = {
+  style: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string,
+  jumlah: PropTypes.string
+}
+
+ActionTagCloud.propTypes = {
+  title: PropTypes.string
+}
+
+ActionSosmed.propTypes = {
+  wrapstyle: PropTypes.string,
+  iconstyle: PropTypes.string
+}
+
 export {
   ActionNavbar,
   ActionNavbarItem,
@@ -424,6 +582,9 @@ export {
   ActionUserDetails,
   ActionBlog,
   ActionButton,
+  ActionPopularPost,
   ActionCategoryList,
-  ActionSosmed
+  ActionSosmed,
+  ActionTagCloud,
+  ActionCommentList
 }
